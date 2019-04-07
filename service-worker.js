@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/react-google-maps-search/precache-manifest.b2fae0459ef55f758cb3e616a5f18495.js"
+  "/react-google-maps-search/precache-manifest.6aad6b5fe644ea3aad5e46812a29828e.js"
 );
 
 workbox.clientsClaim();
