@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router';
-import { Button, Card, Dimmer, Form, Grid, Icon, Input, Loader, Message, Modal } from 'semantic-ui-react';
+import { Button, Card, Container, Dimmer, Form, Grid, Icon, Input, Loader, Message, Modal } from 'semantic-ui-react';
 
 class Home extends Component {
   state = {
     loadingData: false,
-    errorMessage: '',
     query: '',
     redirect: false,
     coords: ""
@@ -28,7 +27,6 @@ class Home extends Component {
 
     let success = (pos) => {
       this.setState({ coords: pos.coords });
-      //console.log(this.state.coords);
     }
 
     let error = (err) => {
@@ -51,7 +49,7 @@ class Home extends Component {
       );
     }
 
-    if (this.state.redirect) {//} && this.state.coords !== '') {
+    if (this.state.redirect) {
       return <Redirect push to={{ pathname: '/search', state: { searchText: this.state.query, lat: this.state.coords.latitude, long: this.state.coords.longitude } }} />
     }
 
@@ -68,7 +66,7 @@ class Home extends Component {
                 <Modal.Header>Search Places</Modal.Header>
                 <Modal.Content>
                   <Modal.Description>
-                    <Form onSubmit={() => this.setState({ redirect: true })} error={!!this.state.errorMessage}>
+                    <Form onSubmit={() => this.setState({ redirect: true })}>
                       <Form.Group inline>
                         <Form.Field width={10}>
                           <Input placeholder="Search for 'pizza'" onChange={event => this.setState({ query: event.target.value })} />
@@ -76,7 +74,6 @@ class Home extends Component {
                         <Button size='small' floated='right' primary icon='search'>
                         </Button>
                       </Form.Group>
-                      <Message error header="Oops!" content={this.state.errorMessage} />
                     </Form>
                   </Modal.Description>
                 </Modal.Content>
