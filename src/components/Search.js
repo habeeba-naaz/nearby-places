@@ -5,7 +5,6 @@ import { Dimmer, Grid, Header, Loader, Menu } from 'semantic-ui-react';
 import "./Search.css";
 import { calcDistance } from "../utils";
 import MapContainer from "./MapContainer";
-import config from '../config';
 
 class Search extends Component {
   state = {
@@ -24,7 +23,7 @@ class Search extends Component {
 
     const q = {
       query: this.props.location.state.searchText,
-      key: config.API_KEY,
+      key: process.env.REACT_APP_API_KEY,
       location: `${this.props.location.state.lat},${this.props.location.state.long}`,
       radius: "3000",
     };
