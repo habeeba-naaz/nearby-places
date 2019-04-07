@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router';
-import { Button, Card, Container, Dimmer, Form, Grid, Icon, Input, Loader, Message, Modal } from 'semantic-ui-react';
+import { Button, Card, Dimmer, Form, Grid, Icon, Input, Loader, Modal } from 'semantic-ui-react';
 
 class Home extends Component {
   state = {
@@ -50,7 +50,7 @@ class Home extends Component {
     }
 
     if (this.state.redirect) {
-      return <Redirect push to={{ pathname: '/search', state: { searchText: this.state.query, lat: this.state.coords.latitude, long: this.state.coords.longitude } }} />
+      return <Redirect push to={{ pathname: '/react-google-maps-search/search', state: { searchText: this.state.query, lat: this.state.coords.latitude, long: this.state.coords.longitude } }} />
     }
 
     return (
