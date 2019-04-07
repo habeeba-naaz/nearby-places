@@ -50,7 +50,7 @@ class Home extends Component {
     }
 
     if (this.state.redirect) {
-      return <Redirect push to={{ pathname: '/react-google-maps-search/search', state: { searchText: this.state.query, lat: this.state.coords.latitude, long: this.state.coords.longitude } }} />
+      return <Redirect push to={{ pathname: '/search', state: { searchText: this.state.query, lat: this.state.coords.latitude, long: this.state.coords.longitude } }} />
     }
 
     return (

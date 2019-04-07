@@ -10,8 +10,8 @@ class App extends Component {
       <HashRouter>
         <Layout>
           <Switch>
-            <Route exact path="/react-google-maps-search" component={Home} />
-            <Route exact path="/react-google-maps-search/search" component={Search} />
+            <Route exact path="/" component={Home} />
+            <Route exact path="/search" component={Search} />
           </Switch>
         </Layout>
       </HashRouter>
