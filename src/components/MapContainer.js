@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Map, GoogleApiWrapper, InfoWindow, Marker } from 'google-maps-react';
+import { Map, GoogleApiWrapper, InfoWindow, Marker, Rating } from 'google-maps-react';
 import _ from "lodash";
 import yellow_marker from "../marker_icon/yellow_marker.png";
 import red_marker from "../marker_icon/red_marker.png";
@@ -70,7 +70,12 @@ export class MapContainer extends Component {
                 options={{ icon: `${red_marker}` }}
                 onClick={this.onMarkerClick}
                 position={{ lat: point[1].lat, lng: point[1].lng }}
-                name={point[0]}
+                name={
+                  <div>
+                    <h2>{point[0]}</h2>
+                    Rating: {point[3]}/5
+                  </div>
+                }
               />
             );
           } else {
@@ -80,7 +85,12 @@ export class MapContainer extends Component {
                 options={{ icon: `${green_marker}` }}
                 onClick={this.onMarkerClick}
                 position={{ lat: point[1].lat, lng: point[1].lng }}
-                name={point[0]}
+                name={
+                  <div>
+                    <h2>{point[0]}</h2>
+                    Rating: {point[3]}/5
+                  </div>
+                }
               />
             );
           }

@@ -36,8 +36,7 @@ class Search extends Component {
     let points = [];
     res.data.results.map((point) => {
       const distance = calcDistance(this.props.location.state.lat, this.props.location.state.long, point.geometry.location.lat, point.geometry.location.lng)
-      points.push([point.name, point.geometry.location, distance]);
-      return
+      points.push([point.name, point.geometry.location, distance, point.rating]);
     });
 
     this.setState({ points, loadingData: false });
