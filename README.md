@@ -20,6 +20,7 @@ Search places near you.
 - To run local machine:
     - Run `npm install`
     - Run `npm start`
+    - Create a `.env` file in root dir and add your Google API key as `REACT_APP_API_KEY`
 
 
 ### Notes
