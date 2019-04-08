@@ -28,7 +28,6 @@ class Search extends Component {
       radius: "3000",
     };
 
-    //const res = await axios.post("http://localhost:4000/", q);
     const url = "https://maps.googleapis.com/maps/api/place/textsearch/json"
     const fUrl = 'https://cors-anywhere.herokuapp.com/' + url + "?query=" + q.query + "&key=" + q.key + "&location=" + q.location + "&radius=" + q.radius;
     const res = await axios.get(fUrl, { crossdomain: true });
@@ -36,7 +35,7 @@ class Search extends Component {
     let points = [];
     res.data.results.map((point) => {
       const distance = calcDistance(this.props.location.state.lat, this.props.location.state.long, point.geometry.location.lat, point.geometry.location.lng)
-      points.push([point.name, point.geometry.location, distance, point.rating]);
+      points.push([point.name, point.geometry.location, distance, point.rating, point.formatted_address]);
     });
 
     this.setState({ points, loadingData: false });
