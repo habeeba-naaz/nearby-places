@@ -23,7 +23,7 @@ jobs:
             npm install -g --silent gh-pages
             git config user.email "vutsalsinghal@gmail.com"
             git config user.name "vutsalsinghal"
-            cp README.md .gitignore build
+            cp ../README.md ../.gitignore ../images build
       - add_ssh_keys:
           fingerprints:
             - "9f:fd:c9:11:a3:db:ab:b2:2a:ac:8f:c9:7c:74:9e:15"
