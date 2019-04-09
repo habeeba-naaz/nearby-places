@@ -30,3 +30,4 @@ Search places near you.
 - To circumnavigate CORS issue in localhost, [cors-anywhere](https://github.com/Rob--W/cors-anywhere) is used.
 - Due to very less no.of Google Maps API call per day/month, "For developement purposes only" banner might show up on the map.
 - Used Circleci for CI/CD to github pages.
+- Created a small Docker image (using multi-stage build) to get the app up and running anywhere in no time!
