@@ -6,11 +6,6 @@ import yellow_marker from "../marker_icon/yellow_marker.png";
 import red_marker from "../marker_icon/red_marker.png";
 import green_marker from "../marker_icon/green_marker.png";
 
-const mapStyles = {
-  width: '60em',
-  height: '45em'
-};
-
 export class MapContainer extends Component {
   state = {
     showingInfoWindow: false,
@@ -45,12 +40,15 @@ export class MapContainer extends Component {
   }
 
   render() {
-    const { lat, lng, points } = this.props;
+    const { lat, lng, points, width, height } = this.props;
     return (
       <Map
         google={this.props.google}
         zoom={13}
-        style={mapStyles}
+        style={{
+          width: width,
+          height: height
+        }}
         initialCenter={{
           lat: lat,
           lng: lng

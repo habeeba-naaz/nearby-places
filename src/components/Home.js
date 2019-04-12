@@ -68,11 +68,12 @@ class Home extends Component {
                   <Modal.Description>
                     <Form onSubmit={() => this.setState({ redirect: true })}>
                       <Form.Group inline>
-                        <Form.Field width={10}>
-                          <Input placeholder="Search for 'pizza'" onChange={event => this.setState({ query: event.target.value })} />
+                        <Form.Field width={8}>
+                          <Input focus
+                            placeholder="Search for 'pizza'"
+                            onChange={event => this.setState({ query: event.target.value })}
+                            icon={<Button size='small' floated='right' primary icon='search' />} />
                         </Form.Field>
-                        <Button size='small' floated='right' primary icon='search'>
-                        </Button>
                       </Form.Group>
                     </Form>
                   </Modal.Description>

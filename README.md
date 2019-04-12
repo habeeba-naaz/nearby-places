@@ -17,11 +17,17 @@ Search places near you.
 
 
 ## Instructions
-- To run local machine:
+- To run on local machine:
     - Clone repo `git clone https://github.com/vutsalsinghal/react-google-maps-search.git .`
     - Install packages `npm install`
     - Start dev server `npm start`
     - Note: Create a `.env` file in root dir and add your Google API key as `REACT_APP_API_KEY`
+
+- To run using docker:
+    - Clone repo `git clone https://github.com/vutsalsinghal/react-google-maps-search.git .`
+    - Install packages `npm install`
+    - Update makefile: replace `API_KEY` with your Google maps API key!
+    - Run `make run-dev`
 
 
 ### Notes

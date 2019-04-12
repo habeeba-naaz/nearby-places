@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Dimmer, Grid, Header, Loader, Menu } from 'semantic-ui-react';
+import { Dimmer, Grid, Loader, Menu } from 'semantic-ui-react';
 import "./Search.css";
 import { calcDistance } from "../utils";
 import MapContainer from "./MapContainer";
@@ -40,7 +40,7 @@ class Search extends Component {
     this.setState({ points, loadingData: false });
   }
 
-  renderMenu = () => {
+  renderMenu = (scroll) => {
     let items = this.state.points.map((point, id) => {
       return (
         <Menu.Item
@@ -49,13 +49,14 @@ class Search extends Component {
           active={this.state.activeItem === point[0]}
           onClick={this.handleItemClick}
         >
-          <Header as='h5'>{point[0]}</Header>
-          <p>{point[2]} miles away</p>
+
+          <b>{point[0]}</b><br />
+          <p> ({point[2]} miles away)</p>
         </Menu.Item>
       );
     });
 
-    return <Menu vertical className="scrollTable">{items}</Menu>;
+    return <Menu vertical={scroll === 'verticalScrollTable'} className={scroll}>{items}</Menu>;
   }
 
   handleItemClick = (e, { name }) => this.setState({ activeItem: name })
@@ -72,13 +73,35 @@ class Search extends Component {
 
     return (
       <Grid stackable>
-        <Grid.Row>
+        <Grid.Row only='large screen computer'>
           <Grid.Column width={12}>
-            <MapContainer activeItem={this.state.activeItem} refresh={this.refreshMarker} lat={this.props.location.state.lat} lng={this.props.location.state.long} points={this.state.points} />
+            <MapContainer activeItem={this.state.activeItem} width="60em" height="45em" refresh={this.refreshMarker} lat={this.props.location.state.lat} lng={this.props.location.state.long} points={this.state.points} />
           </Grid.Column>
           <Grid.Column width={4}>
-            {this.renderMenu()}
+            {this.renderMenu("verticalScrollTable")}
           </Grid.Column>
+        </Grid.Row>
+        <Grid.Row only='tablet'>
+          <Grid.Column width={12}>
+            <MapContainer activeItem={this.state.activeItem} width="39em" height="60em" refresh={this.refreshMarker} lat={this.props.location.state.lat} lng={this.props.location.state.long} points={this.state.points} />
+          </Grid.Column>
+          <Grid.Column width={4}>
+            {this.renderMenu("verticalScrollTable")}
+          </Grid.Column>
+        </Grid.Row>
+        <Grid.Row only='mobile'>
+          <Grid.Row>
+            <br /><br />
+            <Grid.Column>
+              {this.renderMenu("horizontalScrollTable")}
+            </Grid.Column>
+          </Grid.Row>
+          <Grid.Row>
+            <br />
+            <Grid.Column>
+              <MapContainer activeItem={this.state.activeItem} width="28em" height="35em" refresh={this.refreshMarker} lat={this.props.location.state.lat} lng={this.props.location.state.long} points={this.state.points} />
+            </Grid.Column>
+          </Grid.Row>
         </Grid.Row>
       </Grid >
     );
