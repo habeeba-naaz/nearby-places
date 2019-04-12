@@ -1,0 +1,22 @@
+# LABEL maintainer="vutsalsinghal@gmail.com"
+FROM node:10-alpine
+
+ENV ENV="/etc/profile"
+
+RUN apk update && \
+    apk upgrade && \
+    apk --update add \
+    gcc \
+    bash \
+    tree \
+    rm -rf /var/cache/apk/*
+
+WORKDIR /home
+
+ADD package.json .
+#RUN npm install
+ADD .ashrc .
+
+RUN cat .ashrc >> "$ENV"
+
+CMD ["npm", "start"]
