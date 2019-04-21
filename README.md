@@ -1,6 +1,6 @@
 # React Google Maps Search
 
-[![CircleCI](https://circleci.com/gh/vutsalsinghal/react-google-maps-search/tree/code.svg?style=svg)](https://circleci.com/gh/vutsalsinghal/react-google-maps-search/tree/code)
+[![CircleCI](https://circleci.com/gh/vutsalsinghal/nearby-places/tree/code.svg?style=svg)](https://circleci.com/gh/vutsalsinghal/nearby-places/tree/code)
 
 Search places near you.
 
@@ -18,13 +18,13 @@ Search places near you.
 
 ## Instructions
 - To run on local machine:
-    - Clone repo `git clone https://github.com/vutsalsinghal/react-google-maps-search.git .`
+    - Clone repo `git clone https://github.com/vutsalsinghal/nearby-places.git .`
     - Install packages `npm install`
     - Start dev server `npm start`
     - Note: Create a `.env` file in root dir and add your Google API key as `REACT_APP_API_KEY`
 
 - To run using docker:
-    - Clone repo `git clone https://github.com/vutsalsinghal/react-google-maps-search.git .`
+    - Clone repo `git clone https://github.com/vutsalsinghal/nearby-places.git .`
     - Install packages `npm install`
     - Update makefile: replace `API_KEY` with your Google maps API key!
     - Run `make run-dev`
