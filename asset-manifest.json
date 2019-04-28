@@ -1,13 +1,13 @@
 {
-  "main.css": "/react-google-maps-search/static/css/main.1912b301.chunk.css",
-  "main.js": "/react-google-maps-search/static/js/main.66eca8df.chunk.js",
-  "main.js.map": "/react-google-maps-search/static/js/main.66eca8df.chunk.js.map",
-  "runtime~main.js": "/react-google-maps-search/static/js/runtime~main.7ecf8769.js",
-  "runtime~main.js.map": "/react-google-maps-search/static/js/runtime~main.7ecf8769.js.map",
-  "static/js/2.9d354e31.chunk.js": "/react-google-maps-search/static/js/2.9d354e31.chunk.js",
-  "static/js/2.9d354e31.chunk.js.map": "/react-google-maps-search/static/js/2.9d354e31.chunk.js.map",
-  "index.html": "/react-google-maps-search/index.html",
-  "precache-manifest.068162750f7d9054bb5bf60232abf76c.js": "/react-google-maps-search/precache-manifest.068162750f7d9054bb5bf60232abf76c.js",
-  "service-worker.js": "/react-google-maps-search/service-worker.js",
-  "static/css/main.1912b301.chunk.css.map": "/react-google-maps-search/static/css/main.1912b301.chunk.css.map"
+  "main.css": "/nearby-places/static/css/main.1912b301.chunk.css",
+  "main.js": "/nearby-places/static/js/main.1927925e.chunk.js",
+  "main.js.map": "/nearby-places/static/js/main.1927925e.chunk.js.map",
+  "runtime~main.js": "/nearby-places/static/js/runtime~main.6ec1b2ca.js",
+  "runtime~main.js.map": "/nearby-places/static/js/runtime~main.6ec1b2ca.js.map",
+  "static/js/2.9d354e31.chunk.js": "/nearby-places/static/js/2.9d354e31.chunk.js",
+  "static/js/2.9d354e31.chunk.js.map": "/nearby-places/static/js/2.9d354e31.chunk.js.map",
+  "index.html": "/nearby-places/index.html",
+  "precache-manifest.d385675a8a5550d5fbbe2d4f2b29539e.js": "/nearby-places/precache-manifest.d385675a8a5550d5fbbe2d4f2b29539e.js",
+  "service-worker.js": "/nearby-places/service-worker.js",
+  "static/css/main.1912b301.chunk.css.map": "/nearby-places/static/css/main.1912b301.chunk.css.map"
 }
