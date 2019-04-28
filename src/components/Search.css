@@ -1,0 +1,9 @@
+.verticalScrollTable{
+    max-height: 45em;
+    overflow-y: scroll;
+}
+
+.horizontalScrollTable{
+    max-width: 28em;
+    overflow-x: scroll;
+}

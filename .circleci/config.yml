@@ -1,0 +1,43 @@
+version: 2
+jobs:
+  site-deploy:
+    docker:
+      - image: node:8.10
+    steps:
+      - restore_cache:
+          keys:
+            - source-v1-{{ .Branch }}
+            - source-v1-
+      - checkout
+      - run:
+          name: Install dependencies
+          command: npm install
+      - run:
+         name: Building React site
+         command: npm run build
+      - run:
+          name: Install and configure dependencies
+          command: |
+            npm install -g --silent gh-pages
+            git config user.email "vutsalsinghal@gmail.com"
+            git config user.name "vutsalsinghal"
+            cp -r README.md .gitignore images build
+      - add_ssh_keys:
+          fingerprints:
+            - "9f:fd:c9:11:a3:db:ab:b2:2a:ac:8f:c9:7c:74:9e:15"
+      - run:
+          name: Deploy React app to gh-pages
+          command: gh-pages --dist build --branch master --message "[skip ci] Updated build files"
+      - save_cache:
+          key: source-v1-{{ .Branch }}
+          paths:
+            - ".git"
+
+workflows:
+  version: 2
+  build:
+    jobs:
+      - site-deploy:
+          filters:
+            branches:
+              only: code
