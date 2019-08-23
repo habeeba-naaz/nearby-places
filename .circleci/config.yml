@@ -2,7 +2,7 @@ version: 2
 jobs:
   site-deploy:
     docker:
-      - image: node:8.10
+      - image: circleci/node:8.10
     steps:
       - restore_cache:
           keys:
@@ -10,24 +10,19 @@ jobs:
             - source-v1-
       - checkout
       - run:
-          name: Install dependencies
+          name: Install node dependencies
           command: npm install
       - run:
-         name: Building React site
-         command: npm run build
+          name: Copy files
+          command: cp -r README.md .gitignore images build
       - run:
-          name: Install and configure dependencies
+          name: Install awscli
           command: |
-            npm install -g --silent gh-pages
-            git config user.email "vutsalsinghal@gmail.com"
-            git config user.name "vutsalsinghal"
-            cp -r README.md .gitignore images build
-      - add_ssh_keys:
-          fingerprints:
-            - "9f:fd:c9:11:a3:db:ab:b2:2a:ac:8f:c9:7c:74:9e:15"
+            sudo apt-get install python-pip python-dev
+            sudo pip install awscli
       - run:
-          name: Deploy React app to gh-pages
-          command: gh-pages --dist build --branch master --message "[skip ci] Updated build files"
+          name: Deploy to S3
+          command: npm run deploy
       - save_cache:
           key: source-v1-{{ .Branch }}
           paths:
